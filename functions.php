@@ -171,11 +171,12 @@ function filter_block_output( $block_content, $block ) {
 	}
 
 	// アニメーション属性が設定されているか確認
-	if ( isset( $block['attrs']['motionAnimation'] ) && ! empty( $block['attrs']['motionAnimation'] ) ) {
-		$animation_type = $block['attrs']['motionAnimation'];
-		$animation_delay = isset( $block['attrs']['motionDelay'] ) ? $block['attrs']['motionDelay'] : '0';
-		$animation_duration = isset( $block['attrs']['motionDuration'] ) ? $block['attrs']['motionDuration'] : '1';
-		$animation_easing = isset( $block['attrs']['motionEasing'] ) ? $block['attrs']['motionEasing'] : 'ease';
+	if ( isset( $block['attrs']['motionAnimation'] ) && ! empty( $block['attrs']['motionAnimation']['type'] ) ) {
+		$motion = $block['attrs']['motionAnimation'];
+		$animation_type = $motion['type'];
+		$animation_delay = isset( $motion['delay'] ) ? $motion['delay'] : '0';
+		$animation_duration = isset( $motion['duration'] ) ? $motion['duration'] : '0.6';
+		$animation_easing = isset( $motion['ease'] ) ? $motion['ease'] : 'easeOut';
 		
 		// DOMを操作してdata属性を追加
 		$dom = new DOMDocument();
@@ -187,7 +188,8 @@ function filter_block_output( $block_content, $block ) {
 		if ( $first_element ) {
 			// アニメーション属性を追加
 			$first_element->setAttribute( 'data-motion', $animation_type );
-			$first_element->setAttribute( 'style', '--motion-delay: ' . $animation_delay . 's; --motion-duration: ' . $animation_duration . 's; --motion-ease: ' . $animation_easing . ';' );
+			$first_element->setAttribute( 'class', $first_element->getAttribute( 'class' ) . ' has-motion-animation' );
+			$first_element->setAttribute( 'style', $first_element->getAttribute( 'style' ) . ' --motion-delay: ' . $animation_delay . 's; --motion-duration: ' . $animation_duration . 's; --motion-ease: ' . $animation_easing . ';' );
 			
 			// 変更を適用
 			$body = $dom->getElementsByTagName( 'body' )->item( 0 );
@@ -211,20 +213,13 @@ function register_block_attributes() {
 	// アニメーション属性を登録
 	$animation_attributes = array(
 		'motionAnimation' => array(
-			'type' => 'string',
-			'default' => '',
-		),
-		'motionDelay' => array(
-			'type' => 'string',
-			'default' => '0',
-		),
-		'motionDuration' => array(
-			'type' => 'string',
-			'default' => '1',
-		),
-		'motionEasing' => array(
-			'type' => 'string',
-			'default' => 'ease',
+			'type' => 'object',
+			'default' => array(
+				'type' => '',
+				'duration' => 0.6,
+				'delay' => 0,
+				'ease' => 'easeOut'
+			),
 		),
 	);
 
@@ -234,27 +229,23 @@ function register_block_attributes() {
 		'core/heading',
 		'core/image',
 		'core/group',
-		'core/columns',
-		'core/column',
-		'core/cover',
+		'core/button',
 		'core/buttons',
+		'core/column',
+		'core/columns',
 		'core/media-text',
+		'core/list',
+		'core/quote',
+		'core/cover',
+		'core/spacer',
+		'core/separator'
 	);
 
 	// 各ブロックタイプに属性を追加
 	foreach ( $supported_blocks as $block_name ) {
-		wp_register_script(
-			'motion-attributes-' . str_replace( '/', '-', $block_name ),
-			'',
-			array( 'wp-blocks', 'wp-element', 'wp-editor' ),
-			wp_get_theme()->get( 'Version' ),
-			true
-		);
-		
-		wp_add_inline_script(
-			'motion-attributes-' . str_replace( '/', '-', $block_name ),
-			'wp.blocks.registerBlockType("' . $block_name . '", { attributes: ' . json_encode( $animation_attributes ) . ' });'
-		);
+		// インラインJSは動的属性の登録に問題があるため、
+		// ここで登録せず、motion-animation-settings.jsで
+		// addFilterフックを使用して登録する方法に変更
 	}
 }
-add_action( 'enqueue_block_editor_assets', 'register_block_attributes' );
+add_action( 'init', 'register_block_attributes' );
