@@ -1,0 +1,66 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 3,
+  "title": "jade clinic3",
+  "settings": {
+    "color": {
+      "palette": [
+        {
+          "name": "Brand",
+          "slug": "primary",
+          "color": "#0e2317"
+        },
+        {
+          "name": "Brand Accent",
+          "slug": "primary-accent",
+          "color": "#c1e1cf"
+        },
+        {
+          "name": "Brand Alt",
+          "slug": "primary-alt",
+          "color": "#94c680"
+        },
+        {
+          "name": "Brand Alt Accent",
+          "slug": "primary-alt-accent",
+          "color": "#405c38"
+        },
+        {
+          "name": "Contrast",
+          "slug": "main",
+          "color": "#0c0d0d"
+        },
+        {
+          "name": "Border Contrast",
+          "slug": "border-dark",
+          "color": "#323935"
+        },
+        {
+          "name": "Base Accent",
+          "slug": "secondary",
+          "color": "#596960"
+        },
+        {
+          "name": "Contrast Accent",
+          "slug": "main-accent",
+          "color": "#cbd2ce"
+        },
+        {
+          "name": "Border Base",
+          "slug": "border-light",
+          "color": "#dae2dd"
+        },
+        {
+          "name": "Tint",
+          "slug": "tertiary",
+          "color": "#f0f4f2"
+        },
+        {
+          "name": "Base",
+          "slug": "base",
+          "color": "#ffffff"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,106 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 2,
+	"title": "Sunny Surf",
+	"settings": {
+		"color": {
+			"palette": [
+				{
+					"name": "Brand",
+					"slug": "primary",
+					"color": "#6D8D8C"
+				},
+				{
+					"name": "Primary Accent",
+					"slug": "primary-accent",
+					"color": "#DCE4E4"
+				},
+				{
+					"name": "Brand Alt",
+					"slug": "primary-alt",
+					"color": "#EFFF21"
+				},
+				{
+					"name": "Brand Alt Accent",
+					"slug": "primary-alt-accent",
+					"color": "#505143"
+				},
+				{
+					"name": "Contrast",
+					"slug": "main",
+					"color": "#2F2F2F"
+				},
+				{
+					"name": "Contrast Accent",
+					"slug": "main-accent",
+					"color": "#9AB1B1"
+				},
+				{
+					"name": "Base",
+					"slug": "base",
+					"color": "#FFFFFF"
+				},
+				{
+					"name": "Base Accent",
+					"slug": "secondary",
+					"color": "#6D8D8C"
+				},
+				{
+					"name": "tint",
+					"slug": "tertiary",
+					"color": "#C2C6C5"
+				},
+				{
+					"name": "Border Light",
+					"slug": "border-light",
+					"color": "#C8D5D4"
+				},
+				{
+					"name": "Border Dark",
+					"slug": "border-dark",
+					"color": "#495F5E"
+				}
+			]
+		}
+	},
+	"styles": {
+		"elements": {
+			"button": {
+				"color": {
+					"background": "var(--wp--preset--color--primary)",
+					"text": "var(--wp--preset--color--main)"
+				},
+				"spacing": {
+					"padding": {
+						"top": ".6em",
+						"right": "1em",
+						"bottom": ".6em",
+						"left": "1em"
+					}
+				},
+				"typography": {
+					"fontSize": "var(--wp--preset--font-size--small)",
+					"lineHeight": "var(--wp--custom--line-height--body)",
+					"fontWeight": "500",
+					"letterSpacing": "0.05em"
+				},
+				":hover": {
+					"color": {
+						"background": "var(--wp--preset--color--main)",
+						"text": "var(--wp--preset--color--base)"
+					},
+					"typography": {
+						"textDecoration": "underline"
+					}
+				}
+			}
+		},
+		"typography": {
+			"fontFamily": "var(--wp--preset--font-family--jp-serif)",
+			"fontSize": "var(--wp--preset--font-size--base)",
+			"fontWeight": "300",
+			"lineHeight": "var(--wp--custom--line-height--loose)",
+			"letterSpacing": "0.03em"
+		}
+	}
+}
