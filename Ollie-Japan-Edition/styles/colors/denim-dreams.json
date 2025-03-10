@@ -1,0 +1,66 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 2,
+	"title": "Denim Dreams",
+	"settings": {
+		"color": {
+			"palette": [
+				{
+					"name": "Brand",
+					"slug": "primary",
+					"color": "#0094D0"
+				},
+				{
+					"name": "Primary Accent",
+					"slug": "primary-accent",
+					"color": "#DBF5FF"
+				},
+				{
+					"name": "Brand Alt",
+					"slug": "primary-alt",
+					"color": "#BCE7FB"
+				},
+				{
+					"name": "Brand Alt Accent",
+					"slug": "primary-alt-accent",
+					"color": "#043771"
+				},
+				{
+					"name": "Contrast",
+					"slug": "main",
+					"color": "#070708"
+				},
+				{
+					"name": "Contrast Accent",
+					"slug": "main-accent",
+					"color": "#FCF653"
+				},
+				{
+					"name": "Base",
+					"slug": "base",
+					"color": "#FFFFFF"
+				},
+				{
+					"name": "Base Accent",
+					"slug": "secondary",
+					"color": "#043771"
+				},
+				{
+					"name": "tint",
+					"slug": "tertiary",
+					"color": "#FAF5E8"
+				},
+				{
+					"name": "Border Light",
+					"slug": "border-light",
+					"color": "#F6EDD5"
+				},
+				{
+					"name": "Border Dark",
+					"slug": "border-dark",
+					"color": "#393941"
+				}
+			]
+		}
+	}
+}

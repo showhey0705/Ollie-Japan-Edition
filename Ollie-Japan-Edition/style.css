@@ -1,0 +1,624 @@
+/*
+Theme Name:   Ollie Child
+Theme URI:    https://olliewp.com
+Description:  A child theme for Ollie.
+Author:       OllieWP
+Author URI:   http://example.com
+Template:     ollie
+Version:      1.0.0
+License:      GNU General Public License v2 or later
+License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+Tags:         Tags: blog, portfolio, entertainment
+Text Domain:  ollie
+*/
+
+/* 日本語の文字詰め調整（見出しH、段落P）
+参考: https://ics.media/entry/14087/  */
+.wp-block-heading,
+.entry-content p,
+.wp-block-post-content p,
+.wp-block-post-title {
+    font-feature-settings: "palt" 1;
+	word-break: auto-phrase;
+	text-wrap: balance;
+}
+
+/* グラデーション文字 */
+.text-gradient {
+    -webkit-text-fill-color: transparent;
+    background: -webkit-linear-gradient(45deg, var(--wp--preset--color--primary-alt), var(--wp--preset--color--main-accent));
+    -webkit-background-clip: text;
+    -webkit-box-decoration-break: clone;
+    color: var(--wp--preset--color--main);
+    display: inline;
+}
+
+
+
+/* ------------------------------------------- */
+/* テンプレートパーツ
+/* ------------------------------------------- */
+/* 左サイドバー: カラムを逆にする */
+@media ( min-width: 782px ) {
+	.japonizm-reverse {
+		flex-direction: row-reverse;
+	}
+	}
+
+/* ------------------------------------------- */
+/* 	Hero Scroll: 
+	ヒーロースクロール */
+/* ------------------------------------------- */
+@media only screen and (max-width: 863px) {
+	.hide-on-mobile {
+		display: none !important;
+	}
+}
+
+@media only screen and (max-width: 800px) {
+	.hide-on-tablet {
+		display: none !important;
+	}
+}
+
+@media only screen and (min-width: 864px) {
+	.hide-on-desktop {
+		display: none !important; 
+	}
+}
+
+.dot-bg {
+	background-image: url(assets/src-images/dot.png);
+	background-size: 18px 18px;
+}
+
+.glow {
+	position: relative;
+}
+	
+.glow img {
+	position: relative;
+	z-index: 5;
+}
+	
+.glow:after {
+	background: linear-gradient(-45deg, #7b35ff, #a2284c 34%, #352792 67%, #ff8b79);
+	background-size: 200% 200%;
+	content: "";
+	filter: blur(100px);
+	height: 100%;
+	left: 0;
+	margin: 0 auto;
+	opacity: .7;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 100%;
+	z-index: 1;
+	transform: translate3d(0, 0, 0);
+}
+
+.glow-light:after {
+	background: linear-gradient(-45deg, #d8c4ff, #ffa3d8 34%, #c6beff 67%, #ffbbb1);
+	opacity: .6;
+}
+
+.unleash-patterns .glow:after {
+	max-height: 50%;
+	max-width: 1460px;
+}
+
+/* ------------------------------------------- */
+/* 	Hero Scroll: 
+	ヒーロースクロール */
+/* ------------------------------------------- */
+
+
+
+.hero-container {
+	max-height: 1200px;
+}
+
+.japonizm-hero-pattern-mobile {
+	transform: rotate(337deg) skew(10deg, 10deg) translateY(30%) scale(1.4);
+}
+
+.hero-scroll-container {
+	transform: rotate(-28deg) skew(10deg, 10deg);
+}
+
+.hero-scroll {
+	width: 200%;
+	-webkit-overflow-scrolling: touch;
+	animation: scrollhero 100s linear infinite;
+	animation-play-state: running;
+	position: relative;
+	z-index: 20;
+}
+
+.hero-scroll-container.glow-light:after {
+	opacity: .3;
+}
+
+.hero-scroll img {
+	border-radius: 5px;
+	transition: .3s ease;
+	box-shadow: 0px 38px 11px 0px rgba(162, 129, 146, 0.00), 0px 24px 10px 0px rgba(162, 129, 146, 0.01), 0px 14px 8px 0px rgba(162, 129, 146, 0.05), 0px 6px 6px 0px rgba(162, 129, 146, 0.09), 0px 2px 3px 0px rgba(162, 129, 146, 0.10);
+	z-index: 5;
+}
+
+.hero-scroll img:hover {
+	transform: scale(1.05);
+	box-shadow: 0px 240px 67px 0px rgba(162, 129, 146, 0.00), 0px 154px 62px 0px rgba(162, 129, 146, 0.01), 0px 87px 52px 0px rgba(162, 129, 146, 0.05), 0px 38px 38px 0px rgba(162, 129, 146, 0.09), 0px 10px 21px 0px rgba(162, 129, 146, 0.10);
+	z-index: 10;
+}
+
+@keyframes fadeIn {
+	0% {
+        transform: scale(1);
+		opacity: 0;
+    }
+    50% {
+        transform: scale(1.05);
+    }
+	100% {
+		transform: scale(1);
+		opacity: 1;
+	}
+  }
+  
+  .hero-scroll .wp-block-group {
+	animation-name: fadeIn;
+	animation-duration: .5s; /* Adjust as needed */
+	animation-fill-mode: forwards;
+	opacity: 0;
+  }
+  
+.hero-scroll .wp-block-group:nth-child(1) {
+	animation-delay: .05s;
+}
+
+.hero-scroll .wp-block-group:nth-child(2) {
+	animation-delay: .1s;
+}
+
+.hero-scroll .wp-block-group:nth-child(3) {
+	animation-delay: .15s;
+}
+
+.hero-scroll .wp-block-group:nth-child(4) {
+	animation-delay: .2s;
+}
+
+.hero-scroll .wp-block-group:nth-child(5) {
+	animation-delay: .25s;
+}
+
+.hero-scroll .wp-block-group:nth-child(6) {
+	animation-delay: .3s;
+}
+
+.hero-scroll .wp-block-group:nth-child(7) {
+	animation-delay: .35s;
+}
+
+.hero-scroll .wp-block-group:nth-child(8) {
+	animation-delay: .4s;
+}
+
+.hero-scroll .wp-block-group:nth-child(9) {
+	animation-delay: .45s;
+}
+
+.hero-scroll .wp-block-group:nth-child(10) {
+	animation-delay: .5s;
+}
+
+.hero-scroll .wp-block-group:nth-child(11) {
+	animation-delay: .55s;
+}
+
+@keyframes scrollhero {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(-45%);
+    }
+	100% {
+		transform: translateX(0);
+	}
+}
+
+/* ぐるぐる回転 */
+.hero-rotate{
+	overflow: visible;
+}
+.hero-rotate::before {
+    content: " ";
+    display: block;
+    width: 140px;
+    height: 140px;
+    background-image: url(assets/src-images/ocean-views.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: absolute;
+    bottom: -2.4rem;
+    left: -3rem;
+    z-index: 1;
+    animation: rotate 13s linear infinite;
+}
+@keyframes rotate {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+
+
+
+
+
+/* Scroll Snap Cover
+https://www.pootlepress.com/2024/02/how-to-create-a-scroll-snap-effect-for-a-series-of-wordpress-gutenberg-cover-blocks/
+*/
+
+.scroll-snap {
+	overflow-y: scroll;
+	height: 100vh;
+	scroll-snap-type: y mandatory;
+	scrollbar-width: none;
+  }
+
+.scroll-snap .wp-block-cover__inner-container{
+	scroll-snap-type: y mandatory;
+}
+  
+.scroll-snap .wp-block-cover {
+	scroll-snap-align: start;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.scroll-snap .wp-block-cover:target {
+	transform: scale(1.02);
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+
+/* ------------------------------------------- */
+/* 	Horizontal Section Scroll Driven Animation: 
+	水平セクション
+	スクロールドリブンアニメーション
+	https://scroll-driven-animations.style/demos/horizontal-section/css/ */
+/* ------------------------------------------- */
+/* 💡 縦スクロール領域を確保 */
+.horizontal-sections {
+    height: 400vh;
+    overflow: visible;
+    /* width: 100% !important; */
+	max-width: 100vw !important;
+	/* padding-right: 0 !important;
+	padding-left: 0 !important;
+    position: relative; */
+    view-timeline-name: --section-pin-tl;
+    view-timeline-axis: block;
+}
+
+/* 💡 固定されるラッパー */
+.pin-wrap-sticky {
+    height: 100vh;
+    /* width: 100%; */
+    position: sticky;
+    top: 0;
+    overflow-x: hidden;
+}
+
+/* 💡 横スクロールを制御するコンテナ */
+.pin-wrap {
+    height: 100vh;
+    width: 300vmax;
+    display: flex;
+	gap: 54px;	
+    white-space: nowrap;
+    will-change: transform;
+    position: relative;
+    left: 0;
+
+    animation: move linear forwards;
+    animation-timeline: --section-pin-tl;
+    animation-range: contain 0% contain 100%;
+}
+
+/* 💡 横スクロールのアニメーション */
+@keyframes move {
+    to {
+        transform: translateX(calc(-100% + 100vw));
+    }
+}
+
+/* 💡 背景画像を画面いっぱいに表示 */
+.horizontal-section .wp-block-cover__image-background {
+    /* width: 100vw !important; */
+    height: 100vh !important;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; /* 背景として配置 */
+}
+
+/* Horizontal Scroll like Apple
+ https://photoshopvip.net/136000*/
+ .horizontal-scroll {
+	display: flex !important;
+	overflow-x: auto;
+	scroll-snap-type: x mandatory;
+	scroll-padding: 0 24px;
+	scroll-behavior: smooth;
+	-webkit-overflow-scrolling: touch;
+	-ms-overflow-style: none;
+	scrollbar-color: var(--wp--preset--color--border-light) transparent;
+    scrollbar-width: thin;
+}
+
+.horizontal-scroll .wp-block-cover {
+	width: 420px;
+	flex-shrink: 0;
+    scroll-snap-align: start;
+	margin-left: var(--wp--preset--spacing--medium);
+}
+
+.horizontal-scroll .wp-block-cover .wp-block-cover__image, 
+.horizontal-scroll .wp-block-cover img{
+    transition: transform .2s cubic-bezier(0.36, 0, 0.64, 1);
+}
+
+.horizontal-scroll .wp-block-cover:hover .wp-block-cover__image,
+.horizontal-scroll .wp-block-cover:hover img{
+    transform: scale(1.02) rotate(-2deg);
+}
+
+
+
+/* 💡 各セクション */
+.horizontal-section {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+}
+
+/* 💡 カルーセルボタン */
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    z-index: 1000;
+    color: white;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-button.prev {
+    left: 10px;
+}
+
+.carousel-button.next {
+    right: 10px;
+}
+
+.carousel-button:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+
+
+/* モーションアニメーション基本設定 */
+[data-motion] {
+    opacity: 0;
+    will-change: transform, opacity;
+    pointer-events: none;
+    transform-origin: center;
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+/* アニメーション開始時の状態 */
+[data-motion].is-animated {
+    animation-duration: var(--motion-duration, 0.8s);
+    animation-timing-function: cubic-bezier(0.44, 0, 0.56, 1);
+    animation-delay: var(--motion-delay, 0s);
+    animation-fill-mode: forwards;
+    pointer-events: auto;
+}
+
+/* Reduced Motion対応 */
+@media (prefers-reduced-motion: reduce) {
+    [data-motion] {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}
+
+/* 通常のアニメーション */
+@media (prefers-reduced-motion: no-preference) {
+    /* フェードイン */
+    [data-motion="fadeIn"].is-animated {
+        animation-name: fadeIn;
+    }
+
+    /* 下からフェードイン */
+    [data-motion="fadeInUp"].is-animated {
+        animation-name: fadeInUp;
+    }
+
+    /* 左からフェードイン */
+    [data-motion="fadeInLeft"].is-animated {
+        animation-name: fadeInLeft;
+    }
+
+    /* 右からフェードイン */
+    [data-motion="fadeInRight"].is-animated {
+        animation-name: fadeInRight;
+    }
+
+    /* ズームイン */
+    [data-motion="zoomIn"].is-animated {
+        animation-name: zoomIn;
+    }
+
+    /* 下からズームイン */
+    [data-motion="zoomInUp"].is-animated {
+        animation-name: zoomInUp;
+    }
+}
+
+/* アニメーションキーフレーム */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.95) translateY(8px);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, 8px, 0);
+    }
+    100% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes fadeInLeft {
+    0% {
+        opacity: 0;
+        transform: translate3d(-8px, 0, 0) scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+}
+
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        transform: translate3d(8px, 0, 0) scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+}
+
+@keyframes zoomIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes zoomInUp {
+    0% {
+        opacity: 0;
+        transform: scale(0.95) translateY(8px);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* エディタ画面でのアニメーション要素のスタイル */
+.editor-styles-wrapper [data-motion] {
+    transition: all 0.8s cubic-bezier(0.44, 0, 0.56, 1);
+}
+
+.editor-styles-wrapper .has-motion-animation {
+    position: relative;
+}
+
+/* ホバー時にアニメーションのプレビューを表示 */
+.editor-styles-wrapper [data-motion]:hover {
+    outline: 2px dashed #007cba;
+    outline-offset: 2px;
+}
+
+/* エディタでのプレビューアニメーション */
+.editor-styles-wrapper .motion-preview {
+    opacity: 0;
+    transform: var(--preview-transform);
+    transition: all var(--preview-duration) var(--preview-ease) var(--preview-delay) !important;
+    will-change: transform, opacity;
+}
+
+.editor-styles-wrapper .motion-preview.is-animating {
+    opacity: 1 !important;
+    transform: translate3d(0, 0, 0) !important;
+}
+
+/* エディタ画面でのアニメーション要素のスタイル */
+.editor-styles-wrapper .block-editor-block-list__layout [data-block] {
+    position: relative;
+}
+
+.editor-styles-wrapper .motion-preview-wrapper {
+    position: relative;
+    width: 100%;
+    will-change: transform, opacity;
+}
+
+/* ホバー時のアウトライン */
+.editor-styles-wrapper [data-motion]:hover {
+    outline: 2px dashed #007cba;
+    outline-offset: 2px;
+}
+
+/* アニメーション中は子要素のポインターイベントを有効にする */
+.editor-styles-wrapper .motion-preview-wrapper {
+    pointer-events: auto;
+}
+
+/* エディタ画面でのアニメーション要素のスタイル */
+.editor-styles-wrapper .wp-block[data-motion] {
+    opacity: 1;
+    transform: none;
+    transition: all 0.8s linear(0, 0.402 7.4%, 0.711 15.3%, 0.929 23.7%, 1.008 28.2%, 1.067 33%, 1.099 36.9%, 1.12 41%, 1.13 45.4%, 1.13 50.1%, 1.111 58.5%, 1.019 83.2%, 1.004 91.3%, 1);
+}
+
+/* ホバー時のアウトライン */
+.editor-styles-wrapper .wp-block[data-motion]:hover {
+    outline: 2px dashed #007cba;
+    outline-offset: 2px;
+}
+
+/* エディタでのブロック編集を妨げないようにする */
+.editor-styles-wrapper .block-editor-block-list__layout {
+    position: relative;
+    z-index: 1;
+}
+
+/* ブロックツールバーがアニメーションの影響を受けないようにする */
+.block-editor-block-toolbar {
+    z-index: 10;
+}

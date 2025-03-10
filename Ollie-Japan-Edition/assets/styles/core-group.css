@@ -1,0 +1,62 @@
+/* Group
+--------------------------------------------- */
+
+.is-style-background-blur {
+	-webkit-backdrop-filter: saturate(180%) blur(20px);
+	backdrop-filter: saturate(180%) blur(20px);
+	
+}
+/* Border
+	ボーダー付き */
+.is-style-column-box-border {
+	border: 1px solid var(--wp--preset--color--border-dark);
+	border-radius: 8px;
+	box-shadow: var(--wp--preset--shadow--shadow-sm);
+}
+
+/* Improvements for row group */
+@media (max-width: 781px) {
+	.japonizm-row-stack {
+		flex-direction: column;
+		align-items: flex-start !important;
+	}
+
+	.japonizm-row-stack > * {
+		flex-basis: 100% !important;
+	}
+
+	.japonizm-flex-start {
+		align-items: flex-start !important;
+	}
+
+	.japonizm-justify-start {
+		justify-content: flex-start !important;
+	}
+}
+
+.japonizm-row-stack > .wp-block-buttons,
+.japonizm-no-shrink {
+	flex-shrink: 0;
+}
+
+.wp-block-group.japonizm-sticky-top {
+	top: calc(20px + var(--wp-admin--admin-bar--position-offset, 0px))
+}
+
+.japonizm-avatar-row > figure:not(:first-child) {
+    margin-left: -20px !important;
+}
+
+/* Helper class to swap order on mobile */
+/* 
+	.japonizm-column-swap {
+		flex-direction: column-reverse;
+	}
+	.japonizm-row-reverse {
+		flex-direction: row-reverse;
+	} */
+
+.japonizm-text-reverse {
+	flex-direction: row-reverse;
+	overflow: auto;
+}

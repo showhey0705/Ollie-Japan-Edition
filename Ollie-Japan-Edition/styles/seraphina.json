@@ -1,0 +1,95 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 2,
+	"title": "Seraphina",
+	"settings": {
+		"color": {
+			"palette": [
+				{
+					"name": "Brand",
+					"slug": "primary",
+					"color": "#23688C"
+				},
+				{
+					"name": "Primary Accent",
+					"slug": "primary-accent",
+					"color": "#CEE6F3"
+				},
+				{
+					"name": "Brand Alt",
+					"slug": "primary-alt",
+					"color": "#F5BABA"
+				},
+				{
+					"name": "Brand Alt Accent",
+					"slug": "primary-alt-accent",
+					"color": "#E8777A"
+				},
+				{
+					"name": "Contrast",
+					"slug": "main",
+					"color": "#08394E"
+				},
+				{
+					"name": "Contrast Accent",
+					"slug": "main-accent",
+					"color": "#D9B4A5"
+				},
+				{
+					"name": "Base",
+					"slug": "base",
+					"color": "#F7C6B1"
+				},
+				{
+					"name": "Base Accent",
+					"slug": "secondary",
+					"color": "#FFFFFF"
+				},
+				{
+					"name": "tint",
+					"slug": "tertiary",
+					"color": "#FAD9CB"
+				},
+				{
+					"name": "Border Light",
+					"slug": "border-light",
+					"color": "#FCECE5"
+				},
+				{
+					"name": "Border Dark",
+					"slug": "border-dark",
+					"color": "#687176"
+				}
+			]
+		}
+	},
+	"styles": {
+		"elements": {
+			"button": {
+				"color": {
+					"background": "var(--wp--preset--color--primary)",
+					"text": "var(--wp--preset--color--secondary)"
+				},
+				":hover": {
+					"color": {
+						"background": "var(--wp--preset--color--main)",
+						"text": "var(--wp--preset--color--base)"
+					},
+					"typography": {
+						"textDecoration": "underline"
+					}
+				}
+			}
+		},
+		"typography": {
+			"fontFamily": "var(--wp--preset--font-family--jp-serif)",
+			"fontSize": "var(--wp--preset--font-size--base)",
+			"fontWeight": "300",
+			"lineHeight": "var(--wp--custom--line-height--loose)",
+			"letterSpacing": "0.03em"
+		},
+		"color": {
+			"gradient": "linear-gradient(135deg in oklch, #e8e8ff 10%, #ffddab 37%, #fcbbbf 57%, #bdebe8 73%, #ffefcd 100%)"
+		}
+	}
+}

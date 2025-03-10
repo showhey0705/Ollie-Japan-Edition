@@ -1,0 +1,106 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 2,
+	"title": "Beauty",
+	"settings": {
+		"color": {
+			"palette": [
+				{
+					"name": "Brand",
+					"slug": "primary",
+					"color": "#527471"
+				},
+				{
+					"name": "Primary Accent",
+					"slug": "primary-accent",
+					"color": "#DDEEED"
+				},
+				{
+					"name": "Brand Alt",
+					"slug": "primary-alt",
+					"color": "#F5E3CC"
+				},
+				{
+					"name": "Brand Alt Accent",
+					"slug": "primary-alt-accent",
+					"color": "#594936"
+				},
+				{
+					"name": "Contrast",
+					"slug": "main",
+					"color": "#14262C"
+				},
+				{
+					"name": "Contrast Accent",
+					"slug": "main-accent",
+					"color": "#8FAFAC"
+				},
+				{
+					"name": "Base",
+					"slug": "base",
+					"color": "#EAF0F0"
+				},
+				{
+					"name": "Base Accent",
+					"slug": "secondary",
+					"color": "#425D5A"
+				},
+				{
+					"name": "tint",
+					"slug": "tertiary",
+					"color": "#D3E0DF"
+				},
+				{
+					"name": "Border Light",
+					"slug": "border-light",
+					"color": "#BDD0CE"
+				},
+				{
+					"name": "Border Dark",
+					"slug": "border-dark",
+					"color": "#334846"
+				}
+			]
+		}
+	},
+	"styles": {
+		"elements": {
+			"button": {
+				"color": {
+					"background": "var(--wp--preset--color--primary)",
+					"text": "var(--wp--preset--color--base)"
+				},
+				"spacing": {
+					"padding": {
+						"top": ".6em",
+						"right": "1em",
+						"bottom": ".6em",
+						"left": "1em"
+					}
+				},
+				"typography": {
+					"fontSize": "var(--wp--preset--font-size--small)",
+					"lineHeight": "var(--wp--custom--line-height--body)",
+					"fontWeight": "700",
+					"letterSpacing": "0.05em"
+				},
+				":hover": {
+					"color": {
+						"background": "var(--wp--preset--color--main)",
+						"text": "var(--wp--preset--color--base)"
+					},
+					"typography": {
+						"textDecoration": "underline"
+					}
+				}
+			}
+		},
+		"typography": {
+			"fontFamily": "var(--wp--preset--font-family--jp-serif)",
+			"fontSize": "var(--wp--preset--font-size--base)",
+			"fontWeight": "300",
+			"lineHeight": "var(--wp--custom--line-height--loose)",
+			"letterSpacing": "0.03em"
+		}
+	}
+}
