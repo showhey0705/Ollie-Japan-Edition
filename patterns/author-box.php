@@ -1,10 +1,10 @@
 <?php
 /**
- * Title: 著者情報ボックス
+ * Title: Author Box
  * Slug: ollie/author-box
- * Description: 著者のプロフィールとソーシャルリンクを表示するボックスです。
+ * Description: A call-to-action box to offer a free download or sign up user to an email list.
  * Categories: ollie/card
- * Keywords: 著者, プロフィール, ユーザー, バイオグラフィー
+ * Keywords: author, bio, profile, user
  * Viewport Width: 800
  * Block Types:
  * Post Types:

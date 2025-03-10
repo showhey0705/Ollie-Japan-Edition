@@ -32,7 +32,11 @@ add_action( 'wp_enqueue_scripts', 'ollie_child_enqueue_styles' );
 /**
  * in18n　テキストドメインを登録
  */
-load_theme_textdomain( 'japonizm', get_template_directory() . '/languages' );
+function ollie_japan_load_textdomain() {
+    load_theme_textdomain( 'ollie', get_stylesheet_directory() . '/languages' );
+}
+add_action( 'after_setup_theme', 'ollie_japan_load_textdomain' );
+
 
 /**
  * ブロックスタイルを登録
