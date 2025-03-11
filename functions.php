@@ -111,6 +111,44 @@ function enqueue_custom_block_styles() {
 add_action( 'enqueue_block_assets', 'enqueue_custom_block_styles' );
 
 /**
+ * Register pattern categories.
+ */
+function pattern_categories() {
+
+	$block_pattern_categories = array(
+		'ollie/card'           => array(
+			'label' => __( 'Cards', 'ollie' ),
+		),
+		'ollie/call-to-action' => array(
+			'label' => __( 'Call To Action', 'ollie' ),
+		),
+		'ollie/features'       => array(
+			'label' => __( 'Features', 'ollie' ),
+		),
+		'ollie/hero'           => array(
+			'label' => __( 'Hero', 'ollie' ),
+		),
+		'ollie/pages'          => array(
+			'label' => __( 'Pages', 'ollie' ),
+		),
+		'ollie/posts'          => array(
+			'label' => __( 'Posts', 'ollie' ),
+		),
+		'ollie/pricing'        => array(
+			'label' => __( 'Pricing', 'ollie' ),
+		),
+		'ollie/testimonial'    => array(
+			'label' => __( 'Testimonials', 'ollie' ),
+		),
+	);
+
+	foreach ( $block_pattern_categories as $name => $properties ) {
+		register_block_pattern_category( $name, $properties );
+	}
+}
+add_action( 'init', __NAMESPACE__ . '\pattern_categories', 9 );
+
+/**
  * アニメーション設定用のスクリプトを追加
  */
 function add_motion_animation_settings() {
